@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARATEL TEST — Официальный лаунчер</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">KARATEL <span>TEST</span></a>
+            
+            <nav class="nav" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#features" class="nav-link">Особенности</a></li>
+                    <li><a href="#install" class="nav-link">Установка</a></li>
+                    <li><a href="#specs" class="nav-link">Требования</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger" id="burger-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="version-badge">Версия v16.23.0 • Android APK</div>
+                <h1 class="hero-title">Лаунчер нового поколения <br><span>KARATEL TEST</span></h1>
+                <p class="hero-subtitle">
+                    Быстрая загрузка обновлений, встроенная оптимизация FPS, защита от вылетов и удобный доступ к серверам прямо с вашего смартфона.
+                </p>
+
+                <div class="download-box">
+                    <a href="https://github.com/releases/download/v16.23.0/KARATEL.TEST_16.23.0.apk" download="KARATEL.TEST_16.23.0.apk" class="btn-download" id="download-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Скачать лаунчер (APK)
+                    </a>
+                    <span class="file-info">Файл: KARATEL.TEST_16.23.0.apk (90.4 МБ) • Бесплатно</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают <span>KARATEL</span></h2>
+                <div class="features-grid">
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h3>Высокий FPS</h3>
+                        <p>Встроенные конфиги оптимизируют графику и убирают фризы даже на слабых устройствах.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔄</div>
+                        <h3>Автообновление</h3>
+                        <p>Лаунчер сам проверяет актуальность файлов и докачивает нужные патчи без переустановки.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>Безопасность</h3>
+                        <p>Чистый клиент без сторонних модификаций. Прямая загрузка с официального GitHub репозитория.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="install" class="install">
+            <div class="container">
+                <h2 class="section-title">Как <span>установить</span></h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-num">01</div>
+                        <h4>Скачайте файл</h4>
+                        <p>Нажмите на кнопку скачивания выше и дождитесь загрузки файла <b>KARATEL.TEST_16.23.0.apk</b>.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">02</div>
+                        <h4>Разрешите установку</h4>
+                        <p>Откройте файл и разрешите браузеру установку приложений из неизвестных источников в настройках Android.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">03</div>
+                        <h4>Запустите игру</h4>
+                        <p>Откройте установленный лаунчер, введите свой никнейм и начните загрузку игрового кэша.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="specs" class="specs">
+            <div class="container">
+                <h2 class="section-title">Системные <span>требования</span></h2>
+                <div class="specs-box">
+                    <div class="spec-item">
+                        <span>Операционная система:</span>
+                        <strong>Android 8.0 и выше</strong>
+                    </div>
+                    <div class="spec-item">
+                        <span>Оперативная память (ОЗУ):</span>
+                        <strong>От 3 ГБ (рекомендуется 4 ГБ)</strong>
+                    </div>
+                    <div class="spec-item">
+                        <span>Свободное место:</span>
+                        <strong>Не менее 4.5 ГБ</strong>
+                    </div>
+                    <div class="spec-item">
+                        <span>Актуальная версия:</span>
+                        <strong>v16.23.0</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2026 KARATEL TEST. Все права защищены.</p>
+            <a href="https://github.com" target="_blank" class="github-link">Репозиторий GitHub</a>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">Загрузка KARATEL.TEST_16.23.0.apk началась...</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
