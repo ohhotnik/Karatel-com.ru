@@ -3,80 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KARATEL - Скачать АПК</title>
+<title>KARATEL TEST</title>
 <style>
-*{box-sizing:border-box} body{margin:0;font-family:Arial;background:#ff6a00;color:#fff;text-align:center}
-header{padding:20px;font-size:26px;font-weight:900;background:#e65c00}
-.wrap{max-width:480px;margin:0 auto;padding:20px}
-.logo{font-size:70px}
-.card{background:#fff;color:#222;border-radius:20px;padding:20px;margin-top:15px}
-.btn{display:block;background:#ff6a00;color:#fff;text-decoration:none;padding:16px;border-radius:15px;font-size:20px;font-weight:bold;margin-top:12px}
-.btn2{background:#111}
-input{width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;margin-top:8px;font-size:16px}
-.user{background:#fff3eb;padding:10px;border-radius:10px;margin-top:8px;display:flex;justify-content:space-between;color:#222}
-.badge{background:#ff6a00;color:#fff;padding:3px 8px;border-radius:20px;font-size:12px;font-weight:bold}
-#chat{height:180px;overflow:auto;background:#111;color:#fff;padding:10px;border-radius:10px;text-align:left}
-.msg{margin-bottom:8px}
+* {margin:0;padding:0;box-sizing:border-box;}
+body {font-family:Arial,sans-serif;color:#fff;background:#0f1115;}
+.bg {position:fixed;inset:0;background:url('IMG-20261113-WA0545.jpg') center/cover no-repeat;z-index:0;}
+.overlay {position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1;}
+.wrap {position:relative;z-index:2;max-width:600px;margin:0 auto;padding:20px;text-align:center;}
+.logo {font-size:28px;font-weight:900;padding:20px 0;}
+.logo span {color:#ff7a00;}
+h1 {font-size:30px;line-height:1.2;margin:20px 0 10px;}
+h1 span {color:#ff7a00;}
+.btn {display:block;width:100%;padding:18px;background:#ff7a00;color:#fff;text-decoration:none;font-weight:900;border-radius:12px;font-size:18px;margin:10px 0;}
+.btn-white {background:#fff;color:#000;}
+.btn-dark {background:#161920;color:#fff;border:2px solid #ff7a00;}
+.btn-yellow {background:#ffcc00;color:#000;border:none;cursor:pointer;font-size:16px;}
+.status {background:rgba(22,25,32,0.95);border-radius:16px;padding:18px;margin:20px 0;text-align:left;}
+.dot {color:#2ecc71;}
+.bar {height:12px;background:#333;border-radius:20px;overflow:hidden;margin:12px 0;}
+.bar-fill {height:100%;width:54%;background:#ff7a00;}
+.box {background:rgba(22,25,32,0.95);border-radius:16px;padding:18px;margin:15px 0;}
+.box input {width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#000;color:#fff;margin:10px 0;}
+.box button {width:100%;padding:12px;background:#ff7a00;color:#fff;border:none;border-radius:10px;font-weight:900;}
+.tab {display:inline-block;padding:9px 16px;border-radius:20px;background:#252a34;color:#fff;border:none;font-weight:700;margin:3px;cursor:pointer;}
+.tab.active {background:#ff7a00;}
+.item {display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #333;font-size:14px;text-align:left;}
 </style>
 </head>
 <body>
-<header>🥋 KARATEL-COM.RU</header>
+<div class="bg"></div><div class="overlay"></div>
 <div class="wrap">
-<div class="logo">🥋</div>
-<h1>KARATEL</h1>
-<p>Качай приложение и заходи к нам!</p>
+<div class="logo">KARATEL <span>TEST</span></div>
+<h1>Лаунчер нового поколения<br><span>KARATEL TEST</span></h1>
+<a class="btn" href="https://github.com/ohhotnik/Karatel-com.ru/releases/download/v16.23.0/KARATEL.TEST_16.23.0.apk">⬇ СКАЧАТЬ ЛАУНЧЕР (APK)</a>
+<a class="btn btn-white" href="#cab">👤 МОЙ ЛИЧНЫЙ КАБИНЕТ</a>
+<a class="btn btn-dark" href="https://t.me/karatel_test">📢 НАШ TELEGRAM</a>
+<button class="btn btn-yellow" onclick="alert('Промокод: KARATEL - 100 000 ₽')">🎁 ПРОМОКОДЫ — НАЖМИ</button>
 
-<div class="card">
-<h2>📱 Скачать АПК</h2>
-<p>Нажми кнопку ниже, чтобы скачать приложение:</p>
-<a class="btn" href="https://github.com/ohhotnik/Karatel-com.ru/releases/download/v1.0/karatel.apk">⬇️ СКАЧАТЬ АПК</a>
-<a class="btn btn2" href="https://karatel-com.ru">🌐 Открыть сайт</a>
-<p style="font-size:13px;color:#888">Если не качается — напиши Аксу!</p>
+<div class="status">
+<b><span class="dot">●</span> KARATEL #1 — ONLINE</b>
+<div style="display:flex;justify-content:space-between;margin-top:10px;"><span>Игроков онлайн:</span><b id="onlineNum" style="color:#ffcc00;font-size:22px;">27</b></div>
+<div class="bar"><div class="bar-fill" id="onlineBar"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#aaa;"><span>Пинг: <b id="pingNum" style="color:#2ecc71;">32 ms</b></span><span>Аптайм: 99.9%</span><span>Слотов: 50</span></div>
 </div>
 
-<div class="card">
-<h2>Регистрация</h2>
-<input id="name" placeholder="Твоё имя, например Акс">
-<input id="pass" type="password" placeholder="Пароль">
-<button class="btn" onclick="register()" style="border:none;cursor:pointer">Зарегистрироваться / Войти</button>
-<p style="font-size:13px;color:#888">Первый — станет Разработчиком 👑</p>
+<div class="box" id="cab">
+<h2 style="margin-bottom:12px;">👤 Личный кабинет</h2>
+<div><button class="tab active" onclick="cabTab('profile',this)">Профиль</button><button class="tab" onclick="cabTab('garage',this)">🚗 Гараж</button><button class="tab" onclick="cabTab('biz',this)">🏢 Бизнес</button></div>
+<div id="cab-profile"><input id="nickInput" placeholder="Твой ник в игре"><button onclick="saveNick()">Сохранить ник</button></div>
+<div id="cab-garage" style="display:none;"><div class="item"><span>🚗 BMW M5 F90</span><b style="color:#2ecc71;">В гараже</b></div><div class="item"><span>🚗 Lada Priora</span><b style="color:#2ecc71;">В гараже</b></div></div>
+<div id="cab-biz" style="display:none;"><div class="item"><span>🏢 Автосалон</span><b style="color:#ffcc00;">Владелец</b></div><div class="item"><span>⛽ АЗС</span><b style="color:#ffcc00;">Владелец</b></div></div>
 </div>
 
-<div class="card" id="mainCard" style="display:none">
-<h2>Привет, <span id="myName"></span>! <span id="myRole"></span></h2>
-<h3>Бойцы:</h3>
-<div id="users"></div>
-<h3>Чат:</h3>
-<div id="chat"></div>
-<input id="msgInput" placeholder="Написать...">
-<button class="btn" onclick="sendMsg()" style="border:none;cursor:pointer">Отправить</button>
-</div>
-
+<div class="box"><h2>🎁 Промокоды</h2><p style="margin:10px 0;"><b style="color:#ffcc00;">KARATEL</b> — 100 000 ₽</p><p style="margin:10px 0;"><b style="color:#ffcc00;">BONUS500</b> — 50 000 ₽</p><p style="margin:10px 0;"><b style="color:#ffcc00;">GOLD777</b> — 777 коинов</p></div>
+<p style="font-size:12px;color:#888;">© 2026 KARATEL TEST</p>
 </div>
 <script>
-const DB="https://karatel-test-1806a-default-rtdb.firebaseio.com";
-let me=null;
-async function getUsers(){ let r=await fetch(DB+"/users.json"); return await r.json()||{}; }
-async function register(){
-  let name=document.getElementById('name').value.trim();
-  let pass=document.getElementById('pass').value.trim();
-  if(!name||!pass) return alert('Напиши имя и пароль!');
-  let users=await getUsers(); let list=Object.values(users);
-  let found=list.find(u=>u.name.toLowerCase()===name.toLowerCase());
-  if(found){ if(found.pass!==pass) return alert('Пароль не тот!'); me=found; }
-  else { let role=list.length===0?"Разработчик 👑":"Боец 🥋"; me={name,pass,role,time:Date.now()}; await fetch(DB+"/users.json",{method:"POST",body:JSON.stringify(me)}); }
-  localStorage.setItem('karatel',JSON.stringify(me)); showMain();
-}
-function showMain(){ if(!me) return; document.getElementById('mainCard').style.display='block'; document.getElementById('myName').innerText=me.name; document.getElementById('myRole').innerText=me.role; loadAll(); }
-async function loadAll(){
-  let users=await getUsers(); let html=""; Object.values(users).forEach(u=>{ html+=`<div class="user"><span>${u.name}</span><span class="badge">${u.role}</span></div>`; });
-  document.getElementById('users').innerHTML=html||"Пока никого";
-  let r=await fetch(DB+"/chat.json"); let chat=await r.json()||{}; let cHtml=""; Object.values(chat).slice(-30).forEach(m=>{ cHtml+=`<div class="msg"><b>${m.name}:</b> ${m.text}</div>`; });
-  let box=document.getElementById('chat'); box.innerHTML=cHtml||"Пока нет сообщений"; box.scrollTop=box.scrollHeight;
-}
-async function sendMsg(){ let t=document.getElementById('msgInput').value.trim(); if(!t) return; await fetch(DB+"/chat.json",{method:"POST",body:JSON.stringify({name:me.name,text:t,time:Date.now()})}); document.getElementById('msgInput').value=""; loadAll(); }
-let saved=localStorage.getItem('karatel'); if(saved){ me=JSON.parse(saved); showMain(); }
-setInterval(()=>{ if(me) loadAll(); },3000);
+function saveNick(){let n=document.getElementById('nickInput').value.trim();if(!n){alert('Введи ник!');return;}localStorage.setItem('karatel_nick',n);alert('Сохранено: '+n);}
+let s=localStorage.getItem('karatel_nick');if(s){document.getElementById('nickInput').value=s;}
+function cabTab(t,el){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));el.classList.add('active');['profile','garage','biz'].forEach(x=>document.getElementById('cab-'+x).style.display=(x===t?'block':'none'));}
+let online=27;setInterval(()=>{online+=Math.floor(Math.random()*5)-2;if(online<20)online=20;if(online>30)online=30;document.getElementById('onlineNum').innerText=online;document.getElementById('onlineBar').style.width=(online/50*100)+'%';document.getElementById('pingNum').innerText=(28+Math.floor(Math.random()*20))+' ms';},5000);
 </script>
 </body>
-</html>
+       </html>
