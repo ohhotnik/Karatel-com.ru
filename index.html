@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -28,6 +29,13 @@ h1 span {color:#ff7a00;}
 .tab {display:inline-block;padding:9px 16px;border-radius:20px;background:#252a34;color:#fff;border:none;font-weight:700;margin:3px;cursor:pointer;}
 .tab.active {background:#ff7a00;}
 .item {display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #333;font-size:14px;text-align:left;}
+/* СООБЩЕНИЯ - ДОБАВЛЕНО */
+.chat-box {height:220px;overflow-y:auto;background:#000;border-radius:12px;padding:12px;text-align:left;margin:12px 0;}
+.chat-msg {margin-bottom:10px;font-size:14px;line-height:1.4;word-break:break-word;}
+.chat-msg b {color:#ff7a00;}
+.chat-input {display:flex;gap:8px;}
+.chat-input input {flex:1;}
+.chat-input button {width:110px !important;}
 </style>
 </head>
 <body>
@@ -56,6 +64,18 @@ h1 span {color:#ff7a00;}
 </div>
 
 <div class="box"><h2>🎁 Промокоды</h2><p style="margin:10px 0;"><b style="color:#ffcc00;">KARATEL</b> — 100 000 ₽</p><p style="margin:10px 0;"><b style="color:#ffcc00;">BONUS500</b> — 50 000 ₽</p><p style="margin:10px 0;"><b style="color:#ffcc00;">GOLD777</b> — 777 коинов</p></div>
+
+<!-- СООБЩЕНИЯ - ДОБАВЛЕНО, НИЧЕГО СТАРОЕ НЕ ТРОНУТО -->
+<div class="box">
+<h2>💬 Сообщения</h2>
+<p style="font-size:13px;color:#aaa;margin:8px 0;">Пиши от своего ника. Видят все!</p>
+<div class="chat-box" id="chatBox">Загрузка сообщений...</div>
+<div class="chat-input">
+<input id="chatInput" placeholder="Написать сообщение...">
+<button onclick="sendChat()">Отправить</button>
+</div>
+</div>
+
 <p style="font-size:12px;color:#888;">© 2026 KARATEL TEST</p>
 </div>
 <script>
@@ -63,6 +83,33 @@ function saveNick(){let n=document.getElementById('nickInput').value.trim();if(!
 let s=localStorage.getItem('karatel_nick');if(s){document.getElementById('nickInput').value=s;}
 function cabTab(t,el){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));el.classList.add('active');['profile','garage','biz'].forEach(x=>document.getElementById('cab-'+x).style.display=(x===t?'block':'none'));}
 let online=27;setInterval(()=>{online+=Math.floor(Math.random()*5)-2;if(online<20)online=20;if(online>30)online=30;document.getElementById('onlineNum').innerText=online;document.getElementById('onlineBar').style.width=(online/50*100)+'%';document.getElementById('pingNum').innerText=(28+Math.floor(Math.random()*20))+' ms';},5000);
+
+// СООБЩЕНИЯ - ДОБАВЛЕНО
+const DB="https://karatel-test-1806a-default-rtdb.firebaseio.com";
+async function loadChat(){
+  try{
+    let r=await fetch(DB+"/chat.json");
+    let data=await r.json()||{};
+    let arr=Object.values(data).slice(-50);
+    let box=document.getElementById('chatBox');
+    if(arr.length===0){ box.innerHTML="Пока нет сообщений. Напиши первым!"; return; }
+    box.innerHTML=arr.map(m=>`<div class="chat-msg"><b>${m.name}:</b> ${m.text}</div>`).join('');
+    box.scrollTop=box.scrollHeight;
+  }catch(e){}
+}
+async function sendChat(){
+  let input=document.getElementById('chatInput');
+  let text=input.value.trim();
+  if(!text) return;
+  let nick=localStorage.getItem('karatel_nick') || document.getElementById('nickInput').value.trim() || "Гость";
+  if(nick==="Гость"){ alert('Сначала введи ник в Личном кабинете!'); return; }
+  await fetch(DB+"/chat.json",{method:"POST",body:JSON.stringify({name:nick,text:text,time:Date.now()})});
+  input.value="";
+  loadChat();
+}
+document.getElementById('chatInput').addEventListener('keydown',function(e){ if(e.key==='Enter') sendChat(); });
+loadChat();
+setInterval(loadChat,3000);
 </script>
 </body>
-       </html>
+</html>
