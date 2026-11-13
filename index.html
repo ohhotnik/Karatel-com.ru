@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KARATEL — Играй в RP | Официальный сайт</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<title>KARATEL — Играй в RP</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Montserrat',sans-serif;color:#fff;line-height:1.6;background-image: url('IMG-20261113-WA0000.jpg');background-size:cover;background-position:center top;background-attachment:fixed;background-color:#0f1115}
-body::before{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(15,17,21,.5) 0%,rgba(15,17,21,.88) 60%,#0f1115 100%);z-index:-1}
+body{font-family:'Montserrat',sans-serif;color:#fff;line-height:1.6;background-image:url('IMG-20261113-WA0000.jpg');background-size:cover;background-position:center top;background-attachment:fixed;background-color:#0f1115}
+body::before{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(15,17,21,.85) 60%,#0f1115 100%);z-index:-1}
 a{text-decoration:none;color:inherit} button{font-family:inherit;cursor:pointer}
 .container{max-width:1100px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
 .header{background:rgba(15,17,21,.95);border-bottom:1px solid #252a34;position:sticky;top:0;z-index:50}
@@ -17,11 +17,213 @@ a{text-decoration:none;color:inherit} button{font-family:inherit;cursor:pointer}
 .nav{display:flex;gap:8px;flex-wrap:wrap}
 .nav a{padding:9px 14px;border-radius:20px;background:#252a34;font-size:13px;font-weight:700}
 .nav a.pink{background:#ff3b5c}.nav a.blue{background:#229ED9}
-.hero{text-align:center;padding:55px 16px 35px}
+.hero{text-align:center;padding:60px 16px 40px}
 .badge{display:inline-block;padding:7px 16px;background:rgba(255,59,92,.25);border:1px solid #ff3b5c;border-radius:20px;font-size:13px;font-weight:700}
-.hero h1{font-size:44px;font-weight:900;line-height:1.1;margin:18px 0 12px;text-shadow:0 3px 20px #000}.hero h1 span{color:#ff3b5c}
+.hero h1{font-size:48px;font-weight:900;line-height:1.1;margin:18px 0 12px;text-shadow:0 3px 20px #000}.hero h1 span{color:#ff3b5c}
 .hero p{max-width:600px;margin:0 auto 28px;color:#e5e7eb;font-size:16px}
 .btn{display:inline-block;padding:16px 32px;border-radius:12px;font-weight:800;font-size:16px;border:none}
 .btn-pink{background:#ff3b5c;color:#fff;box-shadow:0 8px 25px rgba(255,59,92,.5)}
 .btn-white{background:#fff;color:#111;margin-top:10px}
-.btn-dark{background:#252a34;color:#fff;border:1px solid #3a4150;margin-top
+.btn-dark{background:#252a34;color:#fff;border:1px solid #3a4150;margin-top:10px}
+.file-info{display:block;margin-top:12px;color:#d1d5db;font-size:13px}
+.online{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+.on-card{background:rgba(22,25,32,.9);border:1px solid #252a34;border-radius:12px;padding:12px 20px;min-width:140px}
+.on-card b{font-size:22px;color:#ffcc00;display:block}.on-card span{font-size:12px;color:#9ba3af}
+.section{padding:45px 0;border-top:1px solid #1e222b;background:rgba(15,17,21,.92)}
+.section h2{text-align:center;font-size:26px;margin-bottom:8px}.section .sub{text-align:center;color:#9ba3af;font-size:14px;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:#161920;border:1px solid #252a34;border-radius:14px;padding:20px}
+.card h3{color:#ff3b5c;margin-bottom:8px}.card p{color:#b0b8c4;font-size:14px}
+.server-card{background:#161920;border:2px solid #ff3b5c;border-radius:16px;padding:22px;position:relative}
+.server-card.gold{border-color:#ffcc00}.server-card.blue{border-color:#229ED9}
+.server-card .tag{position:absolute;top:-12px;left:16px;background:#ff3b5c;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:800}
+.server-card h3{font-size:20px;margin:8px 0}.server-card p{color:#9ba3af;font-size:14px;min-height:40px}
+.progress{background:#0f1115;height:10px;border-radius:20px;overflow:hidden;margin:12px 0}.progress i{display:block;height:100%;background:#ff3b5c}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.tab{padding:10px 18px;border-radius:20px;background:#161920;border:1px solid #252a34;font-weight:700;color:#fff}
+.tab.active{background:#ff3b5c;border-color:#ff3b5c}
+.shop-card{background:#161920;border:1px solid #252a34;border-radius:16px;padding:18px;text-align:center}
+.shop-card .emoji{font-size:52px}.shop-card h3{margin:10px 0 4px;font-size:17px}.shop-card p{color:#9ba3af;font-size:13px;min-height:38px}
+.price{color:#ffcc00;font-weight:800;font-size:19px;margin:10px 0}.old{color:#888;text-decoration:line-through;font-size:13px;margin-right:6px}
+.buy{width:100%;padding:12px;border:none;border-radius:10px;background:#ff3b5c;color:#fff;font-weight:800}
+.case-card{background:linear-gradient(135deg,#2a1821,#161920);border:1px solid #ff3b5c;border-radius:16px;padding:22px;text-align:center}
+.case-card .big{font-size:64px}.case-card button{margin-top:12px;width:100%;padding:12px;border:none;border-radius:10px;background:#ffcc00;color:#111;font-weight:800}
+.cabinet{background:#161920;border:1px solid #252a34;border-radius:18px;padding:24px;max-width:650px;margin:0 auto}
+.cab-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+.cab-tabs button{padding:9px 16px;border-radius:20px;background:#252a34;color:#fff;border:none;font-weight:700}
+.cab-tabs button.active{background:#ff3b5c}
+.avatar{width:85px;height:85px;background:#ff3b5c;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 10px}
+.cabinet input{width:100%;padding:13px;border-radius:10px;border:1px solid #333;background:#0f1115;color:#fff;margin-top:10px}
+.save{width:100%;padding:12px;border:none;border-radius:10px;background:#ff3b5c;color:#fff;font-weight:800;margin-top:10px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.stat{background:#0f1115;border:1px solid #252a34;border-radius:12px;padding:14px}.stat b{font-size:20px;color:#ffcc00;display:block}.stat span{font-size:12px;color:#9ba3af}
+.item-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #252a34;font-size:14px}
+.promo-box{background:linear-gradient(90deg,#ff3b5c,#ff8a00);border-radius:16px;padding:22px;text-align:center;max-width:650px;margin:0 auto}
+.promo-box input{padding:12px;border:none;border-radius:10px;width:60%;max-width:280px;margin-top:10px}
+.promo-box button{padding:12px 18px;border:none;border-radius:10px;background:#111;color:#fff;font-weight:800;margin-left:6px}
+.top-row{display:flex;align-items:center;gap:12px;background:#161920;border:1px solid #252a34;border-radius:12px;padding:14px;margin-bottom:10px}
+.top-row .place{width:36px;height:36px;border-radius:50%;background:#ff3b5c;display:flex;align-items:center;justify-content:center;font-weight:900}
+.top-row .place.gold{background:#ffcc00;color:#111}.top-row .place.silver{background:#ccc;color:#111}
+.top-row b{flex:1}.top-row span{color:#ffcc00;font-weight:800}
+.faq{background:#161920;border:1px solid #252a34;border-radius:12px;padding:16px;margin-bottom:10px}
+.faq b{display:block;margin-bottom:6px;color:#ff3b5c}.faq p{color:#b0b8c4;font-size:14px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}.modal-box{background:#161920;border:1px solid #252a34;border-radius:16px;padding:24px;max-width:380px;width:100%;text-align:center}
+.modal-box input{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#0f1115;color:#fff;margin:12px 0}
+.footer{text-align:center;padding:28px 0;color:#6c757d;font-size:13px;background:#0f1115}
+@media(max-width:600px){.hero h1{font-size:32px}.promo-box input{width:100%;margin-bottom:8px}}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="container header-flex">
+<a href="#" class="logo">KARATEL</a>
+<div class="nav">
+<a href="#servers">Сервера</a><a href="#shop">🛒 Магазин</a><a href="#cases">🎁 Кейсы</a><a href="#cabinet" class="pink">👤 Личный кабинет</a><a href="https://t.me/karatel_test" target="_blank" class="blue">📢 Канал</a>
+</div></div></header>
+
+<section class="hero"><div class="container">
+<div class="badge">🔥 ОНЛАЙН: 1 247 игроков • Сервер KARATEL работает</div>
+<h1>KARATEL<br><span>ИГРАЙ В RP ПО-НОВОМУ</span></h1>
+<p>Свой город, свои правила. Машины, бизнесы, дома, банды, полиция. Скачай лаунчер и заходи в игру за 2 минуты.</p>
+<a href="https://github.com/ohhotnik/Karatel-com.ru/releases/download/v16.23.0/KARATEL.TEST_16.23.0.apk" class="btn btn-pink">📱 Скачать лаунчер (APK)</a>
+<span class="file-info">Сервер KARATEL • Версия v16.23.0 • 90.4 МБ • Бесплатно</span><br>
+<a href="#cabinet" class="btn btn-white">👤 Мой личный кабинет</a><br>
+<a href="#shop" class="btn btn-dark">🛒 Магазин — машины, БС, дома</a>
+<div class="online">
+<div class="on-card"><b>1 247</b><span>Игроков онлайн</span></div>
+<div class="on-card"><b>58 342</b><span>Всего игроков</span></div>
+<div class="on-card"><b>3</b><span>Сервера</span></div>
+<div class="on-card"><b>4.9 ★</b><span>Оценка игроков</span></div>
+</div>
+</div></section>
+
+<section class="section" id="servers"><div class="container">
+<h2>🎮 Сервера KARATEL</h2><p class="sub">Заходи туда, где твои друзья</p>
+<div class="grid">
+<div class="server-card"><div class="tag">🔥 ПОПУЛЯРНЫЙ</div><h3>KARATEL №1</h3><p>Основной сервер KARATEL. Много игроков, бизнесов, банды.</p><div class="progress"><i style="width:85%"></i></div><p>Онлайн: 850 / 1000</p><button class="buy" onclick="alert('Сервер KARATEL №1. Заходи через лаунчер.')">Играть</button></div>
+<div class="server-card gold"><div class="tag" style="background:#ffcc00;color:#111;">⭐ НОВЫЙ</div><h3>KARATEL №2 — GOLD</h3><p>Новый сервер KARATEL. Легко начать, много свободных бизнесов.</p><div class="progress"><i style="width:35%;background:#ffcc00"></i></div><p>Онлайн: 350 / 1000</p><button class="buy" style="background:#ffcc00;color:#111;" onclick="alert('Сервер KARATEL №2. Заходи через лаунчер.')">Играть</button></div>
+<div class="server-card blue"><div class="tag" style="background:#229ED9;">💎 VIP</div><h3>KARATEL №3 — ELITE</h3><p>Для опытных. Жесткая экономика, дорогие машины.</p><div class="progress"><i style="width:15%;background:#229ED9"></i></div><p>Онлайн: 47 / 500</p><button class="buy" style="background:#229ED9;" onclick="alert('Сервер KARATEL №3. Заходи через лаунчер.')">Играть</button></div>
+</div>
+</div></section>
+
+<section class="section" id="shop"><div class="container">
+<h2>🛒 Магазин KARATEL</h2><p class="sub">Купил — сразу получил в игре. Введи ник в Личном кабинете.</p>
+<div class="tabs">
+<button class="tab active" onclick="filterShop('all',this)">Все</button>
+<button class="tab" onclick="filterShop('cars',this)">🚗 Машины</button>
+<button class="tab" onclick="filterShop('biz',this)">🏢 Бизнес</button>
+<button class="tab" onclick="filterShop('house',this)">🏠 Дома</button>
+<button class="tab" onclick="filterShop('coins',this)">💰 Койны / VIP</button>
+</div>
+<div class="grid" id="shopGrid"></div>
+</div></section>
+
+<section class="section" id="cases"><div class="container">
+<h2>🎁 Кейсы KARATEL</h2><p class="sub">Испытай удачу — выпадет машина или бизнес</p>
+<div class="grid">
+<div class="case-card"><div class="big">📦</div><h3>Кейс Новичка</h3><p>Шанс на машину 25%.</p><p style="color:#ffcc00;font-weight:800;margin:8px 0;">99 ₽</p><button onclick="openCase('Кейс Новичка')">Открыть кейс</button></div>
+<div class="case-card"><div class="big">💎</div><h3>Кейс Богача</h3><p>Шанс на Lamborghini 40%.</p><p style="color:#ffcc00;font-weight:800;margin:8px 0;">299 ₽</p><button onclick="openCase('Кейс Богача')">Открыть кейс</button></div>
+<div class="case-card"><div class="big">👑</div><h3>Кейс Легенды</h3><p>Шанс на БС 50%.</p><p style="color:#ffcc00;font-weight:800;margin:8px 0;">599 ₽</p><button onclick="openCase('Кейс Легенды')">Открыть кейс</button></div>
+</div>
+</div></section>
+
+<section class="section" id="cabinet"><div class="container">
+<h2>👤 Личный кабинет KARATEL</h2><p class="sub">Твои машины, бизнес, деньги и покупки</p>
+<div class="cabinet">
+<div class="cab-tabs"><button class="active" onclick="cabTab('profile',this)">Профиль</button><button onclick="cabTab('garage',this)">Гараж</button><button onclick="cabTab('biz',this)">Бизнес</button></div>
+<div id="cab-profile">
+<div class="avatar">K</div><h2 id="nickTitle">Гость</h2><p style="color:#9ba3af;font-size:14px;">Сервер: KARATEL • ID: 12345 • Уровень: 15</p>
+<input id="nickInput" placeholder="Твой ник в игре, например: Ivan_Karatel">
+<button class="save" onclick="saveNick()">Сохранить ник</button>
+<div class="stats"><div class="stat"><b>1 250 000 ₽</b><span>Деньги в игре</span></div><div class="stat"><b>2 500</b><span>Karatel Coins</span></div><div class="stat"><b>2</b><span>Машины</span></div><div class="stat"><b>1</b><span>Бизнес</span></div></div>
+</div>
+<div id="cab-garage" style="display:none;">
+<h3 style="text-align:left;">🚗 Мой гараж</h3>
+<div class="item-row"><span>BMW M5 F90 — Черный</span><b style="color:#2ecc71;">В гараже</b></div>
+<div class="item-row"><span>Lada Priora — Белая</span><b style="color:#2ecc71;">В гараже</b></div>
+<div class="item-row"><span>Mercedes G63 — Заказан</span><b style="color:#ffcc00;">Едет в игру...</b></div>
+</div>
+<div id="cab-biz" style="display:none;">
+<h3 style="text-align:left;">🏢 Мой бизнес</h3>
+<div class="item-row"><span>БС — Автосалон</span><b style="color:#ffcc00;">15 000 ₽/час</b></div>
+<div class="item-row"><span>БС — АЗС</span><b style="color:#ffcc00;">8 500 ₽/час</b></div>
+</div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="promo-box"><h2>🎁 Промокод KARATEL</h2><p>Введи промокод и получи бонус</p><input id="promoInput" placeholder="Например: KARATEL"><button onclick="checkPromo()">Активировать</button><p id="promoResult" style="margin-top:10px;font-weight:700;"></p></div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2>🏆 Топ игроков KARATEL</h2><p class="sub">Самые богатые на сервере</p>
+<div style="max-width:650px;margin:0 auto;">
+<div class="top-row"><div class="place gold">1</div><b>Arman_Karatel</b><span>85 000 000 ₽</span></div>
+<div class="top-row"><div class="place silver">2</div><b>Dias_Top</b><span>62 400 000 ₽</span></div>
+<div class="top-row"><div class="place">3</div><b>Alik_Boss</b><span>48 900 000 ₽</span></div>
+<div class="top-row"><div class="place">4</div><b>Timur_777</b><span>31 200 000 ₽</span></div>
+<div class="top-row"><div class="place">5</div><b>Ernar_KZ</b><span>27 800 000 ₽</span></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<h2>📰 Новости KARATEL</h2>
+<div class="grid">
+<div class="card"><h3>🔥 Обновление v16.23.0</h3><p>Новые машины, новый город, оптимизация FPS. Скачай лаунчер заново!</p><p style="color:#666;font-size:12px;margin-top:8px;">13.11.2026</p></div>
+<div class="card"><h3>🎁 Раздача промокодов</h3><p>Промокод KARATEL — 100 000 ₽ и 500 коинов всем новым игрокам.</p><p style="color:#666;font-size:12px;margin-top:8px;">12.11.2026</p></div>
+<div class="card"><h3>🏆 Турнир на 1 000 000 ₽</h3><p>Гонки в субботу в 20:00. Победитель забирает 1 миллион в игре.</p><p style="color:#666;font-size:12px;margin-top:8px;">11.11.2026</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container"><h2>Как начать играть в KARATEL?</h2><div class="grid">
+<div class="card"><h3>01. Скачай</h3><p>Нажми розовую кнопку и скачай APK файл KARATEL.</p></div>
+<div class="card"><h3>02. Установи</h3><p>Разреши установку из неизвестных источников и установи лаунчер.</p></div>
+<div class="card"><h3>03. Играй</h3><p>Введи ник, выбери сервер KARATEL и заходи в город.</p></div>
+</div></div></section>
+
+</main>
+<footer class="footer"><div class="container"><p>© 2026 KARATEL • <a href="https://t.me/karatel_test">Telegram канал</a> • <a href="#shop">Магазин</a> • <a href="#cabinet">Личный кабинет</a></p></div></footer>
+
+<a href="https://github.com/ohhotnik/Karatel-com.ru/releases/download/v16.23.0/KARATEL.TEST_16.23.0.apk" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:999;background:#ff3b5c;color:#fff;padding:16px 30px;border-radius:50px;font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 8px 25px rgba(255,59,92,0.6);white-space:nowrap;">📱 Скачать KARATEL</a>
+
+<div class="modal" id="modal"><div class="modal-box">
+<span style="float:right;cursor:pointer;" onclick="closeModal()">✕</span>
+<h2 id="mTitle">Покупка</h2><p id="mDesc" style="color:#9ba3af;font-size:14px;"></p>
+<input id="modalNick" placeholder="Твой ник в игре">
+<div id="mPrice" style="font-weight:800;color:#ffcc00;font-size:20px;"></div>
+<button class="buy" style="margin-top:10px;" onclick="confirmBuy()">Оплатить и получить в игре</button>
+</div></div>
+
+<script>
+const items=[
+{id:1,cat:'cars',emoji:'🚗',title:'BMW M5 F90',desc:'Спорт седан. 310 км/ч.',price:'349 ₽',old:'499 ₽'},
+{id:2,cat:'cars',emoji:'🏎️',title:'Lamborghini Urus',desc:'Джип. Полный тюнинг.',price:'599 ₽',old:'799 ₽'},
+{id:3,cat:'cars',emoji:'🚙',title:'Mercedes G63',desc:'Гелик. Легенда KARATEL.',price:'499 ₽',old:''},
+{id:4,cat:'cars',emoji:'🚓',title:'Porsche 911',desc:'Для дрифта и гонок.',price:'449 ₽',old:''},
+{id:5,cat:'cars',emoji:'🚜',title:'Lada Priora',desc:'Для новичков.',price:'99 ₽',old:''},
+{id:6,cat:'cars',emoji:'🏍️',title:'Yamaha R1',desc:'Мотоцикл. Очень быстрый.',price:'199 ₽',old:''},
+{id:7,cat:'biz',emoji:'🏢',title:'БС — Автосалон',desc:'Доход 15 000 ₽/час.',price:'999 ₽',old:'1299 ₽'},
+{id:8,cat:'biz',emoji:'⛽',title:'БС — АЗС',desc:'Доход 8 500 ₽/час.',price:'799 ₽',old:''},
+{id:9,cat:'biz',emoji:'🍔',title:'БС — Кафе',desc:'Доход 6 000 ₽/час.',price:'649 ₽',old:''},
+{id:10,cat:'house',emoji:'🏠',title:'Дом — Коттедж',desc:'Гараж на 2 машины.',price:'749 ₽',old:''},
+{id:11,cat:'house',emoji:'🏡',title:'Дом — Вилла',desc:'Гараж на 4 машины.',price:'1299 ₽',old:''},
+{id:12,cat:'coins',emoji:'💰',title:'1000 Coins',desc:'На тюнинг, номера, скины.',price:'99 ₽',old:''},
+{id:13,cat:'coins',emoji:'💎',title:'5000 Coins +500 бонус',desc:'Выгодно.',price:'399 ₽',old:'499 ₽'},
+{id:14,cat:'coins',emoji:'👑',title:'VIP на 30 дней',desc:'+зарплата, /heal, цвет ника.',price:'249 ₽',old:''},
+];
+let current=null;
+function renderShop(cat='all'){document.getElementById('shopGrid').innerHTML=items.filter(i=>cat==='all'||i.cat===cat).map(i=>`<div class="shop-card"><div class="emoji">${i.emoji}</div><h3>${i.title}</h3><p>${i.desc}</p><div class="price">${i.old?'<span class="old">'+i.old+'</span>':''}${i.price}</div><button class="buy" onclick="openModal(${i.id})">Купить</button></div>`).join('')}
+function filterShop(cat,el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderShop(cat)}
+function openModal(id){current=items.find(i=>i.id===id);document.getElementById('mTitle').innerText=current.title;document.getElementById('mDesc').innerText=current.desc;document.getElementById('mPrice').innerText=current.price;document.getElementById('modalNick').value=localStorage.getItem('karatel_nick')||'';document.getElementById('modal').classList.add('open')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function confirmBuy(){let nick=document.getElementById('modalNick').value.trim();if(!nick){alert('Введи ник!');return}localStorage.setItem('karatel_nick',nick);document.getElementById('nickInput').value=nick;document.getElementById('nickTitle').innerText=nick;alert('Заявка создана!\nТовар: '+current.title+'\nНик: '+nick+'\nСервер: KARATEL');closeModal()}
+function saveNick(){let n=document.getElementById('nickInput').value.trim();if(!n){alert('Введи ник!');return}localStorage.setItem('karatel_nick',n);document.getElementById('nickTitle').innerText=n;alert('Сохранено: '+n)}
+let saved=localStorage.getItem('karatel_nick');if(saved){document.getElementById('nickTitle').innerText=saved;document.getElementById('nickInput').value=saved;}
+function cabTab(tab,el){document.querySelectorAll('.cab-tabs button').forEach(b=>b.classList.remove('active'));el.classList.add('active');['profile','garage','biz'].forEach(t=>document.getElementById('cab-'+t).style.display=(t===tab?'block':'none'))}
+function checkPromo(){let v=document.getElementById('promoInput').value.trim().toUpperCase();let r=document.getElementById('promoResult');if(v==='KARATEL'){r.style.color='#2ecc71';r.innerText='✅ Промокод принят! +100 000 ₽ и 500 коинов в игре!'}else{r.style.color='#ff3b5c';r.innerText='❌ Такой промокод не найден.'}}
+function openCase(name){let prizes=['BMW M5 F90','100 000 ₽','500 Coins','Lada Priora','БС — АЗС','Ничего, попробуй еще'];let p=prizes[Math.floor(Math.random()*prizes.length)];alert(name+' открыт!\n\nТвой приз: '+p)}
+renderShop();
+</script>
+</body>
+  </html>
