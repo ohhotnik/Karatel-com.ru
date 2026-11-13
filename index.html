@@ -14,13 +14,12 @@ body {font-family:Arial,sans-serif;color:#fff;background:#0f1115;}
 .logo span {color:#ff7a00;}
 h1 {font-size:30px;line-height:1.2;margin:20px 0 10px;}
 h1 span {color:#ff7a00;}
-p {color:#ddd;font-size:15px;margin-bottom:20px;}
 .btn {display:block;width:100%;padding:18px;background:#ff7a00;color:#fff;text-decoration:none;font-weight:900;border-radius:12px;font-size:18px;margin:10px 0;}
 .btn-white {background:#fff;color:#000;}
 .btn-dark {background:#161920;color:#fff;border:2px solid #ff7a00;}
 .btn-yellow {background:#ffcc00;color:#000;border:none;cursor:pointer;font-size:16px;}
 .status {background:rgba(22,25,32,0.95);border-radius:16px;padding:18px;margin:20px 0;text-align:left;}
-.dot {color:#2ecc71;font-size:20px;}
+.dot {color:#2ecc71;}
 .bar {height:12px;background:#333;border-radius:20px;overflow:hidden;margin:12px 0;}
 .bar-fill {height:100%;width:54%;background:#ff7a00;}
 .box {background:rgba(22,25,32,0.95);border-radius:16px;padding:18px;margin:15px 0;}
@@ -32,18 +31,14 @@ p {color:#ddd;font-size:15px;margin-bottom:20px;}
 </style>
 </head>
 <body>
-<div class="bg"></div>
-<div class="overlay"></div>
+<div class="bg"></div><div class="overlay"></div>
 <div class="wrap">
 <div class="logo">KARATEL <span>TEST</span></div>
 <h1>Лаунчер нового поколения<br><span>KARATEL TEST</span></h1>
-<p>Быстрая загрузка, FPS и доступ к серверам с телефона.</p>
-
 <a class="btn" href="https://github.com/ohhotnik/Karatel-com.ru/releases/download/v16.23.0/KARATEL.TEST_16.23.0.apk">⬇ СКАЧАТЬ ЛАУНЧЕР (APK)</a>
 <a class="btn btn-white" href="#cab">👤 МОЙ ЛИЧНЫЙ КАБИНЕТ</a>
 <a class="btn btn-dark" href="https://t.me/karatel_test">📢 НАШ TELEGRAM</a>
 <button class="btn btn-yellow" onclick="alert('Промокод: KARATEL - 100 000 ₽')">🎁 ПРОМОКОДЫ — НАЖМИ</button>
-<p style="font-size:12px;">Файл: KARATEL.TEST_16.23.0.apk (90.4 МБ)</p>
 
 <div class="status">
 <b><span class="dot">●</span> KARATEL #1 — ONLINE</b>
@@ -53,44 +48,21 @@ p {color:#ddd;font-size:15px;margin-bottom:20px;}
 </div>
 
 <div class="box" id="cab">
-<div style="width:85px;height:85px;background:#ff7a00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 10px;">K</div>
-<h2 id="nickTitle">Гость</h2>
-<p style="margin-top:5px;color:#aaa;font-size:13px;">Сервер: KARATEL • ID: 12345 • Уровень: 15</p>
-<div style="margin:12px 0;">
-<button class="tab active" onclick="cabTab('profile',this)">Профиль</button>
-<button class="tab" onclick="cabTab('garage',this)">🚗 Гараж</button>
-<button class="tab" onclick="cabTab('biz',this)">🏢 Бизнес</button>
-</div>
-<div id="cab-profile">
-<input id="nickInput" placeholder="Твой ник в игре, например: Ivan_Karatel">
-<button onclick="saveNick()">Сохранить ник</button>
-</div>
-<div id="cab-garage" style="display:none;">
-<div class="item"><span>🚗 BMW M5 F90 — Черный</span><b style="color:#2ecc71;">В гараже</b></div>
-<div class="item"><span>🚗 Lada Priora — Белая</span><b style="color:#2ecc71;">В гараже</b></div>
-</div>
-<div id="cab-biz" style="display:none;">
-<div class="item"><span>🏢 БС — Автосалон</span><b style="color:#ffcc00;">15 000 ₽/час</b></div>
-<div class="item"><span>⛽ БС — АЗС</span><b style="color:#ffcc00;">8 500 ₽/час</b></div>
-</div>
+<h2 style="margin-bottom:12px;">👤 Личный кабинет</h2>
+<div><button class="tab active" onclick="cabTab('profile',this)">Профиль</button><button class="tab" onclick="cabTab('garage',this)">🚗 Гараж</button><button class="tab" onclick="cabTab('biz',this)">🏢 Бизнес</button></div>
+<div id="cab-profile"><input id="nickInput" placeholder="Твой ник в игре"><button onclick="saveNick()">Сохранить ник</button></div>
+<div id="cab-garage" style="display:none;"><div class="item"><span>🚗 BMW M5 F90</span><b style="color:#2ecc71;">В гараже</b></div><div class="item"><span>🚗 Lada Priora</span><b style="color:#2ecc71;">В гараже</b></div></div>
+<div id="cab-biz" style="display:none;"><div class="item"><span>🏢 Автосалон</span><b style="color:#ffcc00;">Владелец</b></div><div class="item"><span>⛽ АЗС</span><b style="color:#ffcc00;">Владелец</b></div></div>
 </div>
 
-<div class="box">
-<h2>🎁 Промокоды</h2>
-<p style="margin:10px 0;"><b style="color:#ffcc00;">KARATEL</b> — 100 000 ₽</p>
-<p style="margin:10px 0;"><b style="color:#ffcc00;">BONUS500</b> — 50 000 ₽</p>
-<p style="margin:10px 0;"><b style="color:#ffcc00;">GOLD777</b> — 777 коинов</p>
+<div class="box"><h2>🎁 Промокоды</h2><p style="margin:10px 0;"><b style="color:#ffcc00;">KARATEL</b> — 100 000 ₽</p><p style="margin:10px 0;"><b style="color:#ffcc00;">BONUS500</b> — 50 000 ₽</p><p style="margin:10px 0;"><b style="color:#ffcc00;">GOLD777</b> — 777 коинов</p></div>
+<p style="font-size:12px;color:#888;">© 2026 KARATEL TEST</p>
 </div>
-
-<p style="font-size:12px;color:#888;margin-top:20px;">© 2026 KARATEL TEST</p>
-</div>
-
 <script>
-function saveNick(){let n=document.getElementById('nickInput').value.trim();if(!n){alert('Введи ник!');return;}localStorage.setItem('karatel_nick',n);document.getElementById('nickTitle').innerText=n;alert('Сохранено: '+n);}
-let s=localStorage.getItem('karatel_nick');if(s){document.getElementById('nickTitle').innerText=s;document.getElementById('nickInput').value=s;}
-function cabTab(tab,el){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));el.classList.add('active');['profile','garage','biz'].forEach(t=>document.getElementById('cab-'+t).style.display=(t===tab?'block':'none'));}
-let online=27;
-setInterval(()=>{online+=Math.floor(Math.random()*5)-2;if(online<20)online=20;if(online>30)online=30;document.getElementById('onlineNum').innerText=online;document.getElementById('onlineBar').style.width=(online/50*100)+'%';document.getElementById('pingNum').innerText=(28+Math.floor(Math.random()*20))+' ms';},5000);
+function saveNick(){let n=document.getElementById('nickInput').value.trim();if(!n){alert('Введи ник!');return;}localStorage.setItem('karatel_nick',n);alert('Сохранено: '+n);}
+let s=localStorage.getItem('karatel_nick');if(s){document.getElementById('nickInput').value=s;}
+function cabTab(t,el){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));el.classList.add('active');['profile','garage','biz'].forEach(x=>document.getElementById('cab-'+x).style.display=(x===t?'block':'none'));}
+let online=27;setInterval(()=>{online+=Math.floor(Math.random()*5)-2;if(online<20)online=20;if(online>30)online=30;document.getElementById('onlineNum').innerText=online;document.getElementById('onlineBar').style.width=(online/50*100)+'%';document.getElementById('pingNum').innerText=(28+Math.floor(Math.random()*20))+' ms';},5000);
 </script>
 </body>
-</html>
+  </html>
