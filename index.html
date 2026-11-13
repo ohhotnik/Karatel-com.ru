@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -21,4 +22,149 @@
         .hero p { color: #e5e7eb; font-size: 16px; max-width: 550px; margin: 0 auto 35px; }
         .btn-download { display: inline-block; padding: 18px 36px; background-color: #ff7a00; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: 800; border-radius: 12px; box-shadow: 0 6px 25px rgba(255, 122, 0, 0.5); }
         .btn-second { display: inline-block; padding: 16px 32px; background-color: #161920; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 800; border-radius: 12px; border: 2px solid #ff7a00; margin-top: 14px; }
-        .btn-promo { display: inline-block; padding: 16px 32px; background-color: #ffcc00; color: #111111; text
+        .btn-promo { display: inline-block; padding: 16px 32px; background-color: #ffcc00; color: #111111; text-decoration: none; font-size: 16px; font-weight: 800; border-radius: 12px; margin-top: 14px; border: none; cursor: pointer; }
+        .btn-cab { display: inline-block; padding: 16px 32px; background-color: #ffffff; color: #111111; text-decoration: none; font-size: 16px; font-weight: 800; border-radius: 12px; margin-top: 14px; }
+        .file-info { display: block; margin-top: 15px; font-size: 13px; color: #d1d5db; }
+        .section { padding: 50px 0; border-top: 1px solid #1e222b; background-color: rgba(15,17,21,0.92); }
+        .section h2 { text-align: center; font-size: 24px; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .card { background-color: #161920; padding: 25px; border-radius: 12px; border: 1px solid #252a34; }
+        .card h3 { color: #ff7a00; margin-bottom: 10px; font-size: 18px; }
+        .card p { color: #b0b8c4; font-size: 14px; }
+        .promo-card { background-color: #161920; padding: 20px; border-radius: 12px; border: 1px solid #ff7a00; text-align: center; }
+        .promo-card b { font-size: 22px; color: #ffcc00; letter-spacing: 1px; }
+        .promo-card p { color: #b0b8c4; font-size: 14px; margin: 8px 0; }
+        .copy-btn { padding: 10px 20px; background: #ff7a00; color: #fff; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; }
+        .cabinet { background: #161920; border: 1px solid #252a34; border-radius: 18px; padding: 24px; max-width: 650px; margin: 0 auto; text-align: center; }
+        .avatar { width: 85px; height: 85px; background: #ff7a00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 38px; margin: 0 auto 10px; }
+        .cabinet input { width: 100%; padding: 13px; border-radius: 10px; border: 1px solid #333; background: #0f1115; color: #fff; margin-top: 10px; }
+        .save { width: 100%; padding: 12px; border: none; border-radius: 10px; background: #ff7a00; color: #fff; font-weight: 800; margin-top: 10px; cursor: pointer; }
+        .cab-tabs { display: flex; gap: 8px; justify-content: center; margin: 16px 0; flex-wrap: wrap; }
+        .cab-tabs button { padding: 9px 16px; border-radius: 20px; background: #252a34; color: #fff; border: none; font-weight: 700; cursor: pointer; }
+        .cab-tabs button.active { background: #ff7a00; }
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+        .stat { background: #0f1115; border: 1px solid #252a34; border-radius: 12px; padding: 14px; }
+        .stat b { font-size: 20px; color: #ffcc00; display: block; }
+        .stat span { font-size: 12px; color: #9ba3af; }
+        .item-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid #252a34; font-size: 14px; text-align: left; }
+        .footer { text-align: center; padding: 30px 0; color: #6c757d; font-size: 13px; border-top: 1px solid #1e222b; background-color: #0f1115; }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 99; align-items: center; justify-content: center; padding: 16px; }
+        .modal.open { display: flex; }
+        .modal-box { background: #161920; border: 1px solid #ff7a00; border-radius: 16px; padding: 24px; max-width: 400px; width: 100%; text-align: center; }
+        .status-box { background: #161920; border: 1px solid #252a34; border-radius: 18px; padding: 22px; max-width: 750px; margin: 0 auto; }
+        .status-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+        .dot { width: 14px; height: 14px; background: #2ecc71; border-radius: 50%; display: inline-block; box-shadow: 0 0 0 0 rgba(46,204,113,0.7); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(46,204,113,0.7);} 70%{box-shadow:0 0 0 10px rgba(46,204,113,0);} 100%{box-shadow:0 0 0 0 rgba(46,204,113,0);} }
+        .bar { height: 14px; background: #252a34; border-radius: 20px; overflow: hidden; margin-top: 16px; }
+        .bar-fill { height: 100%; width: 54%; background: linear-gradient(90deg,#ff7a00,#ffcc00); border-radius: 20px; transition: width 1s; }
+        .status-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 16px; text-align: center; }
+        .status-grid b { font-size: 22px; display: block; }
+        .status-grid span { font-size: 12px; color: #9ba3af; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container"><a href="#" class="logo">KARATEL <span>TEST</span></a></div></header>
+    <main>
+        <section class="hero"><div class="container">
+            <div class="badge">Версия v16.23.0 • Android APK • <span style="color:#2ecc71;">● Сервер ONLINE</span></div>
+            <h1>Лаунчер нового поколения <br><span>KARATEL TEST</span></h1>
+            <p>Быстрая загрузка обновлений, встроенная оптимизация FPS и удобный доступ к серверам прямо с вашего смартфона.</p>
+            <a href="https://github.com/ohhotnik/Karatel-com.ru/releases/download/v16.23.0/KARATEL.TEST_16.23.0.apk" class="btn-download">Скачать лаунчер (APK)</a><br>
+            <a href="#cabinet" class="btn-cab">👤 Мой личный кабинет</a><br>
+            <a href="https://t.me/karatel_test" class="btn-second">📢 Наш Telegram канал</a><br>
+            <button class="btn-promo" onclick="document.getElementById('promoModal').classList.add('open')">🎁 Промокоды — Нажми</button>
+            <span class="file-info">Файл: KARATEL.TEST_16.23.0.apk (90.4 МБ) • Бесплатно</span>
+        </div></section>
+
+        <section class="section"><div class="container">
+            <h2>📊 Состояние сервера</h2>
+            <div class="status-box">
+                <div class="status-top">
+                    <div><span class="dot"></span> <b style="font-size:19px;">KARATEL #1 — ONLINE</b><br><span style="color:#9ba3af;font-size:13px;">Работает стабильно, без перезагрузок</span></div>
+                    <div style="text-align:right;"><b id="onlineNum" style="font-size:26px;color:#ffcc00;">27</b><br><span style="font-size:12px;color:#9ba3af;">игроков онлайн</span></div>
+                </div>
+                <div class="bar"><div class="bar-fill" id="onlineBar"></div></div>
+                <div class="status-grid">
+                    <div><b id="pingNum" style="color:#2ecc71;">32 ms</b><span>Пинг</span></div>
+                    <div><b style="color:#ff7a00;">99.9%</b><span>Аптайм</span></div>
+                    <div><b style="color:#fff;">50</b><span>Макс. слотов</span></div>
+                </div>
+                <p style="text-align:center;color:#9ba3af;font-size:12px;margin-top:14px;">Обновляется каждые 5 секунд • <span id="timeNow">--:--:--</span></p>
+            </div>
+        </div></section>
+
+        <section class="section" id="cabinet"><div class="container">
+            <h2>👤 Личный кабинет KARATEL</h2>
+            <div class="cabinet">
+                <div class="avatar">K</div>
+                <h2 id="nickTitle">Гость</h2>
+                <p style="color:#9ba3af;font-size:14px;">Сервер: KARATEL • ID: 12345 • Уровень: 15</p>
+                <div class="cab-tabs">
+                    <button class="active" onclick="cabTab('profile',this)">Профиль</button>
+                    <button onclick="cabTab('garage',this)">🚗 Гараж</button>
+                    <button onclick="cabTab('biz',this)">🏢 Бизнес</button>
+                </div>
+                <div id="cab-profile">
+                    <input id="nickInput" placeholder="Твой ник в игре, например: Ivan_Karatel">
+                    <button class="save" onclick="saveNick()">Сохранить ник</button>
+                    <div class="stats">
+                        <div class="stat"><b>1 250 000 ₽</b><span>Деньги в игре</span></div>
+                        <div class="stat"><b>2 500</b><span>Karatel Coins</span></div>
+                        <div class="stat"><b>2</b><span>Машины</span></div>
+                        <div class="stat"><b>1</b><span>Бизнес</span></div>
+                    </div>
+                </div>
+                <div id="cab-garage" style="display:none;">
+                    <div class="item-row"><span>🚗 BMW M5 F90 — Черный</span><b style="color:#2ecc71;">В гараже</b></div>
+                    <div class="item-row"><span>🚗 Lada Priora — Белая</span><b style="color:#2ecc71;">В гараже</b></div>
+                    <div class="item-row"><span>🚗 Mercedes G63 — Заказан</span><b style="color:#ffcc00;">Едет в игру...</b></div>
+                </div>
+                <div id="cab-biz" style="display:none;">
+                    <div class="item-row"><span>🏢 БС — Автосалон</span><b style="color:#ffcc00;">15 000 ₽/час</b></div>
+                    <div class="item-row"><span>⛽ БС — АЗС</span><b style="color:#ffcc00;">8 500 ₽/час</b></div>
+                </div>
+            </div>
+        </div></section>
+
+        <section class="section"><div class="container"><h2>🎁 Промокоды KARATEL</h2><div class="grid">
+            <div class="promo-card"><b>KARATEL</b><p>+100 000 ₽ и 500 коинов</p><button class="copy-btn" onclick="copyCode('KARATEL')">Скопировать</button></div>
+            <div class="promo-card"><b>BONUS500</b><p>+50 000 ₽ новичкам</p><button class="copy-btn" onclick="copyCode('BONUS500')">Скопировать</button></div>
+            <div class="promo-card"><b>GOLD777</b><p>+777 коинов и VIP на 1 день</p><button class="copy-btn" onclick="copyCode('GOLD777')">Скопировать</button></div>
+        </div></div></section>
+
+        <section class="section"><div class="container"><h2>Как установить</h2><div class="grid">
+            <div class="card"><h3>01. Скачайте файл</h3><p>Нажмите на оранжевую кнопку выше и дождитесь загрузки файла <b>KARATEL.TEST_16.23.0.apk</b>.</p></div>
+            <div class="card"><h3>02. Разрешите установку</h3><p>Откройте файл и разрешите браузеру установку приложений из неизвестных источников в настройках телефона.</p></div>
+            <div class="card"><h3>03. Запустите игру</h3><p>Откройте установленный лаунчер, введите свой никнейм и начните загрузку игрового кэша.</p></div>
+        </div></div></section>
+    </main>
+    <footer class="footer"><div class="container"><p>© 2026 KARATEL TEST. Все права защищены.</p></div></footer>
+
+    <div class="modal" id="promoModal"><div class="modal-box">
+        <span style="float:right;cursor:pointer;" onclick="document.getElementById('promoModal').classList.remove('open')">✕</span>
+        <h2>🎁 Промокоды</h2>
+        <p style="margin:10px 0;"><b style="color:#ffcc00;font-size:22px;">KARATEL</b> — 100 000 ₽</p>
+        <p style="margin:10px 0;"><b style="color:#ffcc00;font-size:22px;">BONUS500</b> — 50 000 ₽</p>
+        <p style="margin:10px 0;"><b style="color:#ffcc00;font-size:22px;">GOLD777</b> — 777 коинов</p>
+        <button class="copy-btn" onclick="copyCode('KARATEL')">Скопировать KARATEL</button>
+    </div></div>
+
+<script>
+function copyCode(code){ navigator.clipboard.writeText(code); alert('Скопировано: ' + code); }
+function saveNick(){ let n=document.getElementById('nickInput').value.trim(); if(!n){ alert('Введи ник!'); return; } localStorage.setItem('karatel_nick',n); document.getElementById('nickTitle').innerText=n; alert('Сохранено: '+n); }
+let saved=localStorage.getItem('karatel_nick'); if(saved){ document.getElementById('nickTitle').innerText=saved; document.getElementById('nickInput').value=saved; }
+function cabTab(tab,el){ document.querySelectorAll('.cab-tabs button').forEach(b=>b.classList.remove('active')); el.classList.add('active'); ['profile','garage','biz'].forEach(t=>document.getElementById('cab-'+t).style.display=(t===tab?'block':'none')); }
+let online = 27;
+setInterval(()=>{
+  online += Math.floor(Math.random()*5)-2;
+  if(online<20) online=20; if(online>30) online=30;
+  document.getElementById('onlineNum').innerText = online;
+  document.getElementById('onlineBar').style.width = (online/50*100)+'%';
+  let ping = 28 + Math.floor(Math.random()*20);
+  document.getElementById('pingNum').innerText = ping + ' ms';
+  document.getElementById('timeNow').innerText = new Date().toLocaleTimeString('ru-RU');
+}, 5000);
+document.getElementById('timeNow').innerText = new Date().toLocaleTimeString('ru-RU');
+</script>
+</body>
+                    </html>
